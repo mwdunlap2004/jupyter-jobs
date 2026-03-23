@@ -1,0 +1,11 @@
+services:
+  jupyter:
+    build: .
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./:/home/jovyan/work
+    working_dir: /home/jovyan/work
+    environment:
+      # Classic Jupyter Notebook (not Lab); open http://localhost:8888 and click earthquakes.ipynb
+      JUPYTER_CMD: notebook
